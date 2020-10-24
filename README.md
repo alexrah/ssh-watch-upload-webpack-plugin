@@ -25,8 +25,8 @@ module.exports = {
   entry: ...,
   output: ...,
   plugins: [
-	...,
-	new SSHWatchUploadWebpackPlugin({
+    ...,
+    new SSHWatchUploadWebpackPlugin({
       mode: ...,
       host: ...,
       port: ...,
@@ -35,7 +35,7 @@ module.exports = {
       privateKey: ...,
       uploadPath: ...,
       domain: ...,
-	  openDomain: ...,
+      openDomain: ...,
     }),
   ],
 };
@@ -61,8 +61,8 @@ module.exports = {
   output: ...,
   watch: true, // Enable watch mode
   plugins: [
-	...,
-	new SSHWatchUploadWebpackPlugin({...}),
+    ...,
+    new SSHWatchUploadWebpackPlugin({...}),
   ],
 };
 ```

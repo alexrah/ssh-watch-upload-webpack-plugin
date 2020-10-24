@@ -1,6 +1,6 @@
 {
   "name": "ssh-watch-upload-webpack-plugin",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A webpack plugin that watches your changed files and uploads the newly compiled assets to an external server via SSH",
   "main": "index.js",
   "scripts": {

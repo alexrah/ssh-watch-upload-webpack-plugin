@@ -50,7 +50,7 @@ class SSHWatchUploadWebpackPlugin {
     );
   }
 
-  /*
+  /**
    * @param { String } file
    * @param { Buffer } info
    */
@@ -60,7 +60,12 @@ class SSHWatchUploadWebpackPlugin {
     // No cache, set and exit
     if (!cachedValue) return this.setCacheValueByKey(file, info);
     // Cache match, skip
-    if (cachedValue.equals(info)) return;
+    // console.log(chalk`{yellow [SSHWatchUpload]} {gray [}${this.timestamp()}{gray ]} cachedValue: `,cachedValue);
+    // console.log(chalk`{yellow [SSHWatchUpload]} {gray [}${this.timestamp()}{gray ]} info: `,info);
+    console.log(chalk`{yellow [SSHWatchUpload]} {gray [}${this.timestamp()}{gray ]} cachedValue: `,typeof cachedValue);
+    // if (cachedValue.equals(info)) return;
+    if (cachedValue === info.compilation.fullHash) return;
+
     // Update cache
     this.setCacheValueByKey(file, info);
     // SSH
@@ -110,6 +115,12 @@ class SSHWatchUploadWebpackPlugin {
 
   validateConnectionOptions(options) {
     return Object.keys(options).every((key) => {
+
+      if(!options[key] && key == 'passphrase' && options['privateKey']) {
+        console.log('passphrase not required if privateKey defined')
+        return true;
+      }
+
       if (!options[key]) console.log(chalk`{yellow [SSHWatchUpload]} {red Missing configuration option: ${key}}`);
       return !!options[key];
     });

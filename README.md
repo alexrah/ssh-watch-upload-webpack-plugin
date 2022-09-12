@@ -5,11 +5,11 @@ A plugin that watches your files and uploads the newly compiled assets to an ext
 ## Install
 
 ```bash
-npm i --save-dev ssh-watch-upload-webpack-plugin
+npm i @alexrah/ssh-watch-upload-webpack-plugin
 ```
 
 ```bash
-yarn add --dev ssh-watch-upload-webpack-plugin
+yarn add --dev @alexrah/ssh-watch-upload-webpack-plugin
 ```
 
 ## Usage

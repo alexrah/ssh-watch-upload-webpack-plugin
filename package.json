@@ -1,7 +1,7 @@
 {
   "name": "ssh-watch-upload-webpack-plugin",
-  "version": "1.0.4",
-  "description": "A webpack plugin that watches your changed files and uploads the newly compiled assets to an external server via SSH",
+  "version": "1.0.5",
+  "description": "[Forked - published on NPM under @alexrah namespace] A webpack plugin that watches your changed files and uploads the newly compiled assets to an external server via SSH",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,10 +13,10 @@
     "upload",
     "ssh-watch-upload-webpack-plugin"
   ],
-  "bugs": "https://github.com/dlerm/ssh-watch-upload-webpack-plugin/issues",
-  "homepage": "https://github.com/dlerm/ssh-watch-upload-webpack-plugin",
-  "repository": "https://github.com/dlerm/ssh-watch-upload-webpack-plugin.git",
-  "author": "Daniel Lerman <dev@dlerman.com> (https://github.com/dlerm)",
+  "bugs": "https://github.com/alexrah/ssh-watch-upload-webpack-plugin",
+  "homepage": "https://github.com/alexrah/ssh-watch-upload-webpack-plugin",
+  "repository": "https://github.com/alexrah/ssh-watch-upload-webpack-plugin.git",
+  "author": "Daniel Lerman <dev@dlerman.com> (https://github.com/dlerm), Alessandro Stoppato <alexrah@gmail.com> (https://github.com/alexrah)",
   "license": "MIT",
   "dependencies": {
     "chalk": "^4.1.0",

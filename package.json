@@ -1,6 +1,6 @@
 {
   "name": "@alexrah/ssh-watch-upload-webpack-plugin",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "[Forked - published on NPM under @alexrah namespace] A webpack plugin that watches your changed files and uploads the newly compiled assets to an external server via SSH",
   "main": "index.js",
   "scripts": {

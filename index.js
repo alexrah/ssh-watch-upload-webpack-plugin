@@ -7,7 +7,7 @@ class SSHWatchUploadWebpackPlugin {
   /*
    * @param { Object } options
    */
-  constructor({ mode, host, port, username, passphrase, privateKey, uploadPath, domain = false, openDomain = false }) {
+  constructor({ mode, host, port, username, passphrase, privateKeyPath, uploadPath, domain = false, openDomain = false }) {
     this.cache = {};
     this.outputPath = '';
     this.mode = mode;
@@ -15,7 +15,7 @@ class SSHWatchUploadWebpackPlugin {
     this.port = port;
     this.username = username;
     this.passphrase = passphrase;
-    this.privateKey = privateKey;
+    this.privateKeyPath = privateKeyPath;
     this.domain = domain;
     this.openDomain = openDomain;
     this.uploadPath = uploadPath;
@@ -91,8 +91,8 @@ class SSHWatchUploadWebpackPlugin {
   }
 
   connect() {
-    const { host, port, username, passphrase, privateKey } = this;
-    const valideOptions = this.validateConnectionOptions({ host, port, username, passphrase, privateKey });
+    const { host, port, username, passphrase, privateKeyPath } = this;
+    const valideOptions = this.validateConnectionOptions({ host, port, username, passphrase, privateKeyPath });
     if (!valideOptions) return false;
     this.ssh
       .connect({
@@ -100,7 +100,7 @@ class SSHWatchUploadWebpackPlugin {
         port,
         username,
         passphrase,
-        privateKey,
+        privateKeyPath,
       })
       .then(() => console.log(chalk`{yellow [SSHWatchUpload]} {gray [}${this.timestamp()}{gray ]} {gray Connected to server}\n{yellow [SSHWatchUpload]} {gray [}${this.timestamp()}{gray ]} {magenta Watching for changes...}`));
   }
@@ -116,8 +116,8 @@ class SSHWatchUploadWebpackPlugin {
   validateConnectionOptions(options) {
     return Object.keys(options).every((key) => {
 
-      if(!options[key] && key == 'passphrase' && options['privateKey']) {
-        console.log('passphrase not required if privateKey defined')
+      if(!options[key] && key == 'passphrase' && options['privateKeyPath']) {
+        console.log('passphrase not required if privateKeyPath defined')
         return true;
       }
 

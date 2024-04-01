@@ -32,7 +32,7 @@ module.exports = {
       port: ...,
       username: ...,
       passphrase: ...,
-      privateKey: ...,
+      privateKeyPath: ...,
       uploadPath: ...,
       domain: ...,
       openDomain: ...,
@@ -92,7 +92,7 @@ Allowed values are as follows:
 |**port**|Number|null|Port used to connect to the external server|
 |**username**|String|''|Username used to connect to the external server|
 |**passphrase**|String|''|Passphrase used to connect to the external server|
-|**privateKey**|String|''|File path of the SHH private key file|
+|**privateKeyPath**|String|''|File path of the SHH private key file|
 |**uploadPath**|String|''|Path on the external server where files should be uploaded|
 |**domain**|String|''|Public facing domain of the server|
 |**openDomain**|Boolean|false|Flag to enable the browser to automatically open the domain once connected|
